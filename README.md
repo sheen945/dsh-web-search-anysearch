@@ -135,6 +135,16 @@ test/*.test.mjs     node:test 用例
 - 搜索结果条数上限 10（AnySearch 侧限制），`web_search` 请求更多时会截断。
 - 只替换搜索；网页正文抓取仍由 `fetchProvider: http` 负责（可用 `web-fetch-*` 插件另行替换）。
 
+## 相关项目
+
+生态里同类插件不少，按需挑一个就行，也可以都看看各自的取舍：
+
+- [anysearch-team/anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) —— AnySearch 官方维护的 DSH 插件，工具更全（垂类搜索、批量、正文提取）
+- [RealAlexandreAI/dsh-all-search](https://github.com/RealAlexandreAI/dsh-all-search) —— AnySearch 网页搜索提供方（ctx.web）
+- [VinciBeans/dsh-web-search-anysearch](https://github.com/VinciBeans/dsh-web-search-anysearch) —— 可在 Plugins 页切换官方 / AnySearch 的另一实现
+- [JPA957/dsh-web-search-anysearch](https://github.com/JPA957/dsh-web-search-anysearch) —— 多 key 轮询与单 key 冷却降级
+- 本仓库的取舍：**零第三方依赖 + 仓库不含凭据 + 设置页分段切换**，适合自己一份 key、想随时一键回退的用法
+
 ## License
 
 [MIT](LICENSE) © 2026 sheen945

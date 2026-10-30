@@ -87,6 +87,16 @@ node --test    # 7 cases: parsing, dedupe, key precedence, request shape, error 
 
 Tests never touch the network; `fetch` is stubbed.
 
+## Related
+
+The ecosystem has several AnySearch plugins; pick one, or compare the trade-offs:
+
+- [anysearch-team/anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — maintained by AnySearch, with the full tool set (vertical search, batch, extraction)
+- [RealAlexandreAI/dsh-all-search](https://github.com/RealAlexandreAI/dsh-all-search) — AnySearch web search provider on `ctx.web`
+- [VinciBeans/dsh-web-search-anysearch](https://github.com/VinciBeans/dsh-web-search-anysearch) — another implementation with an official/AnySearch switch
+- [JPA957/dsh-web-search-anysearch](https://github.com/JPA957/dsh-web-search-anysearch) — multi-key rotation with per-key cooldown
+- This repository's trade-off: **no third-party dependencies, no credential in the repo, a segmented switch in Settings** — for one key of your own and instant rollback
+
 ## License
 
 [MIT](LICENSE) © 2026 sheen945
