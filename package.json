@@ -1,0 +1,68 @@
+{
+  "name": "dsh-web-search-anysearch",
+  "version": "1.2.1",
+  "description": "把 DeepSeek Harness 的 web_search 接到 AnySearch，并在 设置 → 插件 里给出一张可直接切换的卡片",
+  "type": "module",
+  "license": "MIT",
+  "author": "sheen945",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "anysearch",
+    "web-search",
+    "mcp",
+    "search-provider"
+  ],
+  "homepage": "https://github.com/sheen945/dsh-web-search-anysearch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheen945/dsh-web-search-anysearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sheen945/dsh-web-search-anysearch/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    },
+    "install": {
+      "preferred": "tarball",
+      "tarball": "https://codeload.github.com/sheen945/dsh-web-search-anysearch/tar.gz/refs/heads/main",
+      "zip": "https://codeload.github.com/sheen945/dsh-web-search-anysearch/zip/refs/heads/main",
+      "git": "https://github.com/sheen945/dsh-web-search-anysearch.git"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dshTarget": "0.2.1-rc.2"
+}

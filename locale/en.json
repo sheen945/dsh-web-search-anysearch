@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AnySearch Web Search",
+    "description": "Routes the agent's web_search tool to AnySearch (https://api.anysearch.com) instead of the built-in DeepSeek search, returning AnySearch result pages with title, URL and excerpt."
+  }
+}

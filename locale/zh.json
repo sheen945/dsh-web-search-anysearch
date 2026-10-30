@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AnySearch 网络搜索",
+    "description": "把 web_search 接到 AnySearch（https://api.anysearch.com），并在 设置 → 插件 里提供「网页搜索 · AnySearch」卡片，可一键在 AnySearch 与 DeepSeek 官方搜索之间切换；端点与密钥已预置。"
+  }
+}

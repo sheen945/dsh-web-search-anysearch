@@ -1,0 +1,33 @@
+# AnySearch 搜索插件（设置页卡片 + Host 插件）。
+#
+# 1) insert 注册 Host 插件：把 AnySearch 远端 MCP（https://api.anysearch.com/mcp）
+#    包装成 ctx.web 的搜索 provider，id = anysearch。
+# 2) 覆盖 `web` 行：searchProvider 从内置的 deepseek-official 改为 anysearch，
+#    fetchProvider 保持 http（网页正文抓取仍走本地 http provider）。
+#
+# 内置的 web-search-deepseek 行保持注册但不再被选中，随时可回滚。
+#
+# 本文件不含任何凭据。密钥按以下顺序解析，命中即用：
+#   1. 本行的 `apiKey`（留空则跳过）
+#   2. 环境变量 ANYSEARCH_API_KEY
+#   3. 文件 ~/.dsh/anysearch.key（Windows: %USERPROFILE%\.dsh\anysearch.key）
+# 把 `as_sk_...` 写入其中任意一处即可；文件方式不需要重启之外的额外配置。
+
+- insert:
+    - id: web-search-anysearch
+      name: dsh-web-search-anysearch
+      inject: [web]
+      config:
+        endpoint: https://api.anysearch.com/mcp
+        # apiKey 留空：由 ANYSEARCH_API_KEY 或 ~/.dsh/anysearch.key 提供。
+        apiKey: ''
+        client: mcp/1.0.0
+        timeoutMs: 60000
+        maxAttempts: 3
+        retryDelayMs: 1500
+
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: anysearch
+    fetchProvider: http
