@@ -1,5 +1,12 @@
 # dsh-web-search-anysearch
 
+[![License: MIT](https://img.shields.io/github/license/sheen945/dsh-web-search-anysearch?color=16a34a)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/sheen945/dsh-web-search-anysearch?sort=semver&color=4D6BFE)](https://github.com/sheen945/dsh-web-search-anysearch/releases)
+[![dsh](https://img.shields.io/badge/dsh-0.2.1--rc.2-4D6BFE)](https://github.com/deepseek-ai/deepseek-harness)
+[![tests](https://img.shields.io/badge/tests-node%3Atest%207%20passing-16a34a)](test/provider.test.mjs)
+
+**中文** · [English](README.en.md)
+
 把 **DeepSeek Harness** 的 `web_search` 接到 [AnySearch](https://anysearch.com)，替代内置的 DeepSeek 官方搜索（`deepseek-official`），并在 **设置 → 插件** 里给出一张可直接切换的卡片。
 
 - 不改工具、不改提示词：`web_search` 的名字、参数、返回结构全部保持原样，只换后端。
